@@ -5,15 +5,28 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Insert title here</title>
+
+  	  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.99.0/css/materialize.min.css">
+	  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.99.0/js/materialize.min.js"></script>
+	  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    
+<title>Adicionar Tarefa</title>
 </head>
 <body>
-	<h3>Adicionar Tarefa</h3>
-	<form:errors path="tarefa.descricao" />
-	<form action="adicionaTarefa" method="POST">
-		Descrição: <br />
-		<textarea name="descricao" rows="5" cols="100"></textarea> <br />
-		<input type="submit" value="Adicionar">
-	</form>
+	<div class="container">
+		
+		<h4>Adicionar Tarefa</h4>
+		
+		<div align="right">	
+				<a class="waves-effect waves-light btn" href="listaTarefas">Lista de tarefas</a>
+		</div>
+	
+		<form:errors path="tarefa.descricao" />
+		<form action="adicionaTarefa" method="POST">
+			Descrição: <br />
+			<textarea id="icon_prefix2" class="materialize-textarea" name="descricao" rows="5" cols="100"></textarea> <br />
+			<input class="waves-effect waves-light btn" type="submit" value="Adicionar">
+		</form>
+	</div>
 </body>
 </html>

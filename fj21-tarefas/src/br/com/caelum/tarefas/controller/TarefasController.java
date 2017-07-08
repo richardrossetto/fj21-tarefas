@@ -1,11 +1,16 @@
 package br.com.caelum.tarefas.controller;
 
+
+
+import java.util.List;
+
 import javax.validation.Valid;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.servlet.ModelAndView;
 
 import br.com.caelum.tarefas.dao.JdbcTarefaDao;
 import br.com.caelum.tarefas.modelo.Tarefa;
@@ -31,10 +36,13 @@ public class TarefasController {
 	}
 	
 	@RequestMapping("listaTarefas")
-	public String lista (Model model){
+	public ModelAndView lista(){
 		JdbcTarefaDao dao = new JdbcTarefaDao();
-		model.addAttribute("tarefas", dao.lista());
-		return "tarefa/lista";
+		List<Tarefa> tarefas = dao.lista();
+		
+		ModelAndView mv = new ModelAndView("tarefa/lista");
+		mv.addObject("tarefas", tarefas);
+		return mv;
 		
 	}
 	
@@ -50,5 +58,12 @@ public class TarefasController {
 		JdbcTarefaDao dao = new JdbcTarefaDao();
 		model.addAttribute("tarefa", dao.buscaPorId(id));
 		return "tarefa/mostra";
+	}
+	
+	@RequestMapping("alteraTarefa")
+	public String altera(Tarefa tarefa) {
+	JdbcTarefaDao dao = new JdbcTarefaDao();
+	dao.altera(tarefa);
+	return "redirect:listaTarefas";
 	}
 }
