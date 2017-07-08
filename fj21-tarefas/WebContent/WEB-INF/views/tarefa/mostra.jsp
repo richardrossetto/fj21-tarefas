@@ -9,16 +9,23 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-	 
+	
+	<!--  
 	  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.99.0/css/materialize.min.css">
 	  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.99.0/js/materialize.min.js"></script>
 	  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+	 	
+	    <link href="resources/css/jquery.css" rel="stylesheet">
+		<script type="text/javascript" src="resources/js/jquery.js"></script>
+		<script type="text/javascript" src="resources/js/jquery-ui.js"></script>
+	-->	
+		<!-- Incluindo Materialize -->  	   
+		<link href="resources/materialize/css/materialize.css" rel="stylesheet">
+		<link href="resources/materialize/css/materialize.min.css" rel="stylesheet">
+		<script type="text/javascript" src="resources/materialize/js/materialize.js"></script>
+		<script type="text/javascript" src="resources/materialize/js/materialize.min.js"></script>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 		
-		
-	    <link href="css/jquery.css" rel="stylesheet">
-		<script src="js/jquery.js"></script>
-		<script src="js/jquery-ui.js"></script>
-		  
 <title>Alterando as Tarefas</title>
  
 </head>
@@ -42,7 +49,9 @@
 					
 					Data de finalização:  <caelum:campoData id="dataFinalizacao" /> <br /> 
 					
-				<br /> <input class="waves-effect waves-light btn" type="submit" value="Alterar" />
+				<br /> 
+				
+				<input class="waves-effect waves-light btn" type="submit" value="Alterar" />
 			</form>
 	</div>
 </body>
